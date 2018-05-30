@@ -1,0 +1,16 @@
+{
+    "name": "drupal/solr_facet_field_formatter",
+    "type": "drupal-module",
+    "description": "Format text and string fields to link to solr facet searches",
+    "keywords": [
+        "Drupal"
+    ],
+    "license": "GPL-2.0+",
+    "homepage": "",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "",
+        "source": ""
+    },
+    "require": {}
+}

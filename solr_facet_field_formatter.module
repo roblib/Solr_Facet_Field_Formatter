@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains facet_field_formatter.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function solr_facet_field_formatter_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the facet_field_formatter module.
+    case 'help.page.facet_field_formatter':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Format string and text fields to link to Solr facet searches') . '</p>';
+      return $output;
+
+    default:
+  }
+}
