@@ -6,6 +6,7 @@ use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
+use Drupal\search_api_solr\Utility;
 
 /**
  * Plugin implementation of the 'Facet_Field_Formatter' formatter.
@@ -42,6 +43,7 @@ class SolrFacetTextFieldFormatter extends FormatterBase {
 
     foreach ($items as $delta => $item) {
       $field = $item->getFieldDefinition();
+      // TODO: more robust fieldname parsing
       $fieldLabel = str_replace(' ', '_', $field->getLabel());
       $link = Link::fromTextAndUrl($item->value, Url::fromroute('view.solr_search_content.page_1',
         [], ['query' => ['f[0]' => $fieldLabel . ':' . $item->value]]));
