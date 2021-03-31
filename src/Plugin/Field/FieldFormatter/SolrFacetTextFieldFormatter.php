@@ -45,8 +45,8 @@ class SolrFacetTextFieldFormatter extends FormatterBase {
       $field = $item->getFieldDefinition();
       // TODO: more robust fieldname parsing
       $fieldLabel = str_replace(' ', '_', $field->getLabel());
-      $link = Link::fromTextAndUrl($item->value, Url::fromroute('view.solr_search_content.page_1',
-        [], ['query' => ['f[0]' => $fieldLabel . ':' . $item->value]]));
+      $link = Link::fromTextAndUrl($item->value, Url::fromroute('view.herbarium_search.page_1',
+        [], ['query' => ['search_api_fulltext' => '','herbarium-search[0]' => $fieldLabel . ':' . $item->value]]));
       $element[$delta] = [$link->toRenderable()];
     }
 
